@@ -1,0 +1,33 @@
+工具目录结构：
+|-- README
+|-- TimRestApiGear.js
+|-- TimSendGroupMsgPressTest.js
+|-- config
+|   |-- config.js
+`-- lib
+    |-- TimGenerateSig.js
+    |-- TimRestApi.js
+
+config.js 为该工具所需APP基础配置信息。
+
+TimRestApiGear.js 为使用接口示例工具。
+
+TimRestApi.js 为接口具体实现;
+TimGenerateSig.js 用来生成usersig;
+TimSendGroupMsgPressTest.js 为群内发送消息压力测试脚本。
+
+
+1.集成说明
+支持独立模式
+配置config.js文件，其中：
+identifier  为APP管理者账户；
+privateKey  为本地私钥位置；
+expireAfter 公钥有效时常，不填默认一个月
+执行node TimRestApiGear.js 可看到接口示例工具访问命令(用法)。
+
+2.压力测试脚本使用说明
+该工具主要测试在群内发送消息时，客户端接收消息能力;
+执行node TimSendGroupMsgPressTest.js 可看到压测脚本工具访问命令(用法);
+压测前需要确保群组存在，并且群内人数尽可能少，减少其他因素影响。
+
+
